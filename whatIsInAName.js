@@ -4,13 +4,25 @@ function whatIsInAName(collection, source) {
     // Only change code below this line
     var keys = Object.keys(source);
 
-    console.log(keys.includes("last"));
-    collection.forEach(function (elem, idx) {
+    collection.forEach(function (elem) {
+        var check = true;
+        keys.forEach(function (t) {
+            if (!elem.hasOwnProperty(t)) {
+                check = false;
+            } else {
+                if (elem[t] !== source[t]) {
+                    check = false;
+                }
+            }
+        });
+        if (check) {
+            arr.push(elem);
+        }
 
     });
 
     // Only change code above this line
-    // return arr;
+    return arr;
 }
 
 whatIsInAName([{first: "Romeo", last: "Montague"}, {first: "Mercutio", last: null}, {

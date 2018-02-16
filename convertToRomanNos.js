@@ -44,4 +44,3 @@ function convertToRoman2(num) {
     console.log(romanStr);
 }
 
-convertToRoman2(3966);
